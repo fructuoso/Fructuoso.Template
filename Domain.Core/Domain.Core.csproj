@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Fructuoso.Template.Domain.Core</AssemblyName>
+    <RootNamespace>Fructuoso.Template.Domain.Core</RootNamespace>
+  </PropertyGroup>
+
+</Project>
