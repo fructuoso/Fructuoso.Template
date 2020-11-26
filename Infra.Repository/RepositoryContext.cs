@@ -1,5 +1,4 @@
-﻿using Fructuoso.Template.Domain.Core.Entity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Fructuoso.Template.Infra.Repository
 {

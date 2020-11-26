@@ -1,15 +1,17 @@
 ﻿using Fructuoso.Template.Domain.Core.Entity;
 using Fructuoso.Template.Domain.Core.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Fructuoso.Template.Infra.Repository
 {
     public class GenericRepositoryCrud<TKey, TEntity> : IRepositoryCrud<TKey, TEntity> where TKey : struct where TEntity : BaseEntity<TKey>
     {
-        private readonly RepositoryContext _Context;
-        private readonly DbSet<TEntity> _DbSet;
+        protected readonly RepositoryContext _Context;
+        protected readonly DbSet<TEntity> _DbSet;
 
         public GenericRepositoryCrud(RepositoryContext context)
         {
@@ -44,5 +46,6 @@ namespace Fructuoso.Template.Infra.Repository
             await _Context.SaveChangesAsync();
             return obj;
         }
+
     }
 }
