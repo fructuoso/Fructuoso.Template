@@ -1,9 +1,7 @@
 ﻿using Fructuoso.Template.Domain.Core.Entity;
 using Fructuoso.Template.Domain.Core.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Fructuoso.Template.Infra.Repository
@@ -37,7 +35,7 @@ namespace Fructuoso.Template.Infra.Repository
             return obj;
         }
         public async Task<TEntity> GetAsync(TKey id) => await _DbSet.FirstOrDefaultAsync(o => o.Id.Equals(id));
-        public IAsyncEnumerable<TEntity> GetAllAsync() => _DbSet.AsAsyncEnumerable();
+        public async Task<IEnumerable<TEntity>> GetAllAsync() => await Task.FromResult<IEnumerable<TEntity>>(_DbSet);
         public async Task<TEntity> UpdateAsync(TEntity obj)
         {
             if (!await _DbSet.AnyAsync(o => o.Id.Equals(obj.Id))) return null;

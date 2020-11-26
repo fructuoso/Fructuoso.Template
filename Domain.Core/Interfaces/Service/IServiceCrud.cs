@@ -9,7 +9,7 @@ namespace Fructuoso.Template.Domain.Core.Interfaces.Service
         Task<TEntity> AddAsync(TEntity obj);
         Task<TEntity> DeleteAsync(TKey id);
         Task<TEntity> GetAsync(TKey id);
-        IAsyncEnumerable<TEntity> GetAllAsync();
+        Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> UpdateAsync(TEntity obj);
     }
 }

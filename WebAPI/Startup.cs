@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Fructuoso.Template.Domain.Core.Interfaces.Service;
 using Fructuoso.Template.Domain.Services;
 using Fructuoso.Template.Domain.Core.Interfaces.Repository;
+using AutoMapper;
+using System;
 
 namespace WebAPI
 {
@@ -41,6 +43,10 @@ namespace WebAPI
             services.AddTransient<ICursoService, CursoService>();
             services.AddTransient(typeof(IRepositoryCrud<,>), typeof(GenericRepositoryCrud<,>));
             services.AddTransient<ICursoRepository, CursoRepository>();
+            #endregion
+
+            #region AutoMapper
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             #endregion
 
             services.AddControllers()
