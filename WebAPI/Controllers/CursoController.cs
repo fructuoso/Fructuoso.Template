@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Fructuoso.Template.Domain.Core.Entity;
 using Fructuoso.Template.Domain.Core.Interfaces.Service;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -23,24 +24,40 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("{id}/Instrutores")]
-        public async Task<IActionResult> GetInstrutores(Guid id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<InstrutorModel>>> GetInstrutor(Guid id)
         {
-            IEnumerable<Instrutor> entities = await _Service.GetAllInstrutoresAsync(id);
+            IEnumerable<Instrutor> entities = await _Service.GetAllInstrutorAsync(id);
             IEnumerable<InstrutorModel> models = _Mapper.Map<IEnumerable<InstrutorModel>>(entities);
             return Ok(models);
         }
 
-        [HttpPost("{id}/Instrutores")]
-        public async Task<IActionResult> PostInstrutor(Guid id, [FromBody] Guid instrutorId)
+        [HttpGet("{id}/Instrutores/{instrutorId}", Name = "GetInstrutor")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<InstrutorModel>> GetInstrutor(Guid id, Guid instrutorId)
+        {
+            Instrutor entity = await _Service.GetInstrutorAsync(id, instrutorId);
+            return Ok(_Mapper.Map<InstrutorModel>(entity));
+        }
+
+        [HttpPost("{id}/Instrutores/{instrutorId}", Name = "AssociarInstrutor")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public async Task<IActionResult> PostInstrutor(Guid id, Guid instrutorId)
         {
             await _Service.AddInstrutorAsync(id, instrutorId);
-            return Ok();
+            Instrutor entity = await _Service.GetInstrutorAsync(id, instrutorId);
+
+            string action = Url.Action("GetInstrutor", ControllerContext.ActionDescriptor.ControllerName, new { id = id, instrutorId = instrutorId });
+
+            return Created(action, _Mapper.Map<InstrutorModel>(entity));
         }
-        [HttpDelete("{id}/Instrutores")]
-        public async Task<IActionResult> DeleteInstrutor(Guid id, [FromBody] Guid instrutorId)
+
+        [HttpDelete("{id}/Instrutores/{instrutorId}", Name = "DesassociarInstrutor")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public async Task<IActionResult> DeleteInstrutor(Guid id, Guid instrutorId)
         {
             await _Service.DeleteInstrutorAsync(id, instrutorId);
-            return Ok();
+            return NoContent();
         }
     }
 }

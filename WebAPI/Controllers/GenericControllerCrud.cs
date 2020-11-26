@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Fructuoso.Template.Domain.Core.Entity;
 using Fructuoso.Template.Domain.Core.Interfaces.Service;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -40,7 +41,15 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] TModel model) => Ok(await _Service.AddAsync(_Mapper.Map<TEntity>(model)));
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public async Task<IActionResult> Post([FromBody] TModel model)
+        {
+            TEntity entity = await _Service.AddAsync(_Mapper.Map<TEntity>(model));
+
+            string action = Url.Action("Get", this.ControllerContext.ActionDescriptor.ControllerName, new { id = entity.Id });
+
+            return Created(action, _Mapper.Map<TModel>(entity));
+        }
 
         [HttpPut()]
         public async Task<IActionResult> Put([FromBody] TModel model) => Ok(await _Service.UpdateAsync(_Mapper.Map<TEntity>(model)));

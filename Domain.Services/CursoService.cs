@@ -20,7 +20,9 @@ namespace Fructuoso.Template.Domain.Services
 
         public async Task<Curso> AddInstrutorAsync(Guid id, Guid instrutorId) => await _Repository.AddInstrutorAsync(id, instrutorId);
 
-        public async Task<ICollection<Instrutor>> GetAllInstrutoresAsync(Guid id) => await _Repository.GetAllInstrutoresAsync(id);
+        public async Task<ICollection<Instrutor>> GetAllInstrutorAsync(Guid id) => await _Repository.GetAllInstrutorAsync(id);
+        
+        public async Task<Instrutor> GetInstrutorAsync(Guid id, Guid instrutorId) => await _Repository.GetInstrutorAsync(id, instrutorId);
 
         public async Task<Curso> DeleteInstrutorAsync(Guid id, Guid instrutorId) => await _Repository.DeleteInstrutorAsync(id, instrutorId);
     }

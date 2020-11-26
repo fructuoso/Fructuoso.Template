@@ -42,10 +42,15 @@ namespace Fructuoso.Template.Infra.Repository
             return curso;
         }
 
-        public async Task<ICollection<Instrutor>> GetAllInstrutoresAsync(Guid id)
+        public async Task<ICollection<Instrutor>> GetAllInstrutorAsync(Guid id)
         {
             Curso curso = await _DbSet.Include(o => o.Instrutores).FirstOrDefaultAsync(o => o.Id.Equals(id));
             return curso.Instrutores;
+        }
+        public async Task<Instrutor> GetInstrutorAsync(Guid id, Guid instrutorId)
+        {
+            Curso curso = await _DbSet.Include(o => o.Instrutores).FirstOrDefaultAsync(o => o.Id.Equals(id));
+            return curso.Instrutores.FirstOrDefault(o => o.Id.Equals(instrutorId));
         }
     }
 }
