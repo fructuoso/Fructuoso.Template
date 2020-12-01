@@ -33,9 +33,14 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Get(TKey id)
         {
             TEntity entity = await _Service.GetAsync(id);
+
+            if (entity == null) return NotFound();
+
             TModel model = _Mapper.Map<TModel>(entity);
             return Ok(model);
         }
