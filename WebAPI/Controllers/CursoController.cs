@@ -25,18 +25,26 @@ namespace WebAPI.Controllers
 
         [HttpGet("{id}/Instrutores")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<InstrutorModel>>> GetInstrutor(Guid id)
         {
             IEnumerable<Instrutor> entities = await _Service.GetAllInstrutorAsync(id);
+
+            if (entities == null) return NotFound();
+
             IEnumerable<InstrutorModel> models = _Mapper.Map<IEnumerable<InstrutorModel>>(entities);
             return Ok(models);
         }
 
         [HttpGet("{id}/Instrutores/{instrutorId}", Name = "GetInstrutor")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<InstrutorModel>> GetInstrutor(Guid id, Guid instrutorId)
         {
             Instrutor entity = await _Service.GetInstrutorAsync(id, instrutorId);
+
+            if (entity == null) return NotFound();
+            
             return Ok(_Mapper.Map<InstrutorModel>(entity));
         }
 
