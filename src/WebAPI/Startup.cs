@@ -11,6 +11,7 @@ using Fructuoso.Template.Domain.Services;
 using Fructuoso.Template.Domain.Core.Interfaces.Repository;
 using AutoMapper;
 using System;
+using FluentValidation.AspNetCore;
 
 namespace WebAPI
 {
@@ -52,7 +53,7 @@ namespace WebAPI
             services.AddControllers()
                 .AddNewtonsoftJson(options =>
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-                );
+                ).AddFluentValidation(f => f.RegisterValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
