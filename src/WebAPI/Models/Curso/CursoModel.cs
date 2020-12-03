@@ -1,7 +1,7 @@
 ﻿using System;
 using FluentValidation;
 
-namespace WebAPI.Models.Instrutor
+namespace WebAPI.Models.Curso
 {
     public class CursoModel
     {

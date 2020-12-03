@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Entity = Fructuoso.Template.Domain.Core.Entity;
 
-namespace WebAPI.Models.Instrutor
+namespace WebAPI.Models.Curso
 {
     public class CursoProfile : Profile
     {
