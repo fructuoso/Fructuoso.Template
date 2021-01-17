@@ -1,19 +1,19 @@
+using AutoMapper;
+using FluentValidation.AspNetCore;
+using Fructuoso.Template.Domain.Core.Interfaces.Repository;
+using Fructuoso.Template.Domain.Core.Interfaces.Service;
+using Fructuoso.Template.Domain.Services;
+using Fructuoso.Template.Infra.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Fructuoso.Template.Infra.Repository;
-using Microsoft.EntityFrameworkCore;
-using Fructuoso.Template.Domain.Core.Interfaces.Service;
-using Fructuoso.Template.Domain.Services;
-using Fructuoso.Template.Domain.Core.Interfaces.Repository;
-using AutoMapper;
 using System;
-using FluentValidation.AspNetCore;
 
-namespace WebAPI
+namespace Fructuoso.Template.WebAPI
 {
     public class Startup
     {

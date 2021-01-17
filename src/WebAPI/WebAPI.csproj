@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>WebAPI</AssemblyName>
-    <RootNamespace>WebAPI</RootNamespace>
+    <AssemblyName>Fructuoso.Template.WebAPI</AssemblyName>
+    <RootNamespace>Fructuoso.Template.WebAPI</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
