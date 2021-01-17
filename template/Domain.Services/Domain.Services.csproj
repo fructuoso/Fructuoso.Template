@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>$ext_rootnamespace$.$safeprojectname$</AssemblyName>
+    <RootNamespace>$ext_rootnamespace$.$safeprojectname$</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj" />
+  </ItemGroup>
+
+</Project>

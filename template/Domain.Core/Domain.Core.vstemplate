@@ -1,0 +1,36 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Fructuoso.Template.Domain.Core</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Fructuoso.Template.Domain.Core</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Domain.Core.csproj" File="Domain.Core.csproj" ReplaceParameters="true">
+      <Folder Name="Entity" TargetFolderName="Entity">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BaseEntity.cs">BaseEntity.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Curso.cs">Curso.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Instrutor.cs">Instrutor.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Interfaces" TargetFolderName="Interfaces">
+        <Folder Name="Repository" TargetFolderName="Repository">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ICursoRepository.cs">ICursoRepository.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="IRepositoryCrud.cs">IRepositoryCrud.cs</ProjectItem>
+        </Folder>
+        <Folder Name="Service" TargetFolderName="Service">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ICursoService.cs">ICursoService.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="IServiceCrud.cs">IServiceCrud.cs</ProjectItem>
+        </Folder>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
