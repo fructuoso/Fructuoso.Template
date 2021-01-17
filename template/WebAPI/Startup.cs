@@ -1,9 +1,9 @@
 using AutoMapper;
 using FluentValidation.AspNetCore;
-using $ext_safeprojectname$.Domain.Core.Interfaces.Repository;
-using $ext_safeprojectname$.Domain.Core.Interfaces.Service;
-using $ext_safeprojectname$.Domain.Services;
-using $ext_safeprojectname$.Infra.Repository;
+using $ext_rootnamespace$.Domain.Core.Interfaces.Repository;
+using $ext_rootnamespace$.Domain.Core.Interfaces.Service;
+using $ext_rootnamespace$.Domain.Services;
+using $ext_rootnamespace$.Infra.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using $ext_safeprojectname$.Domain.Core.Entity;
-using $ext_safeprojectname$.Domain.Core.Interfaces.Service;
+using $ext_rootnamespace$.Domain.Core.Entity;
+using $ext_rootnamespace$.Domain.Core.Interfaces.Service;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using $ext_rootnamespace$.$safeprojectname$.Models.Instrutor;

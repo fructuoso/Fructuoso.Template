@@ -1,4 +1,4 @@
-﻿using $ext_safeprojectname$.Domain.Core.Entity;
+﻿using $ext_rootnamespace$.Domain.Core.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

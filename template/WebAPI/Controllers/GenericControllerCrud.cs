@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using $ext_safeprojectname$.Domain.Core.Entity;
-using $ext_safeprojectname$.Domain.Core.Interfaces.Service;
+using $ext_rootnamespace$.Domain.Core.Entity;
+using $ext_rootnamespace$.Domain.Core.Interfaces.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

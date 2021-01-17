@@ -1,6 +1,6 @@
-﻿using $ext_safeprojectname$.Domain.Core.Entity;
-using $ext_safeprojectname$.Domain.Core.Interfaces.Repository;
-using $ext_safeprojectname$.Domain.Core.Interfaces.Service;
+﻿using $ext_rootnamespace$.Domain.Core.Entity;
+using $ext_rootnamespace$.Domain.Core.Interfaces.Repository;
+using $ext_rootnamespace$.Domain.Core.Interfaces.Service;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
