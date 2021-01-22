@@ -1,0 +1,40 @@
+<VSTemplate Version="3.0.0" Type="ProjectGroup"
+  xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Fructuoso Template DDD Backend</Name>
+    <Description>Domain Driven Design: Backend Solution Template</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <CreateNewFolder>false</CreateNewFolder>
+    <DefaultName>DDD.Backend</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+  </TemplateData>
+  <TemplateContent>
+    <CustomParameters>
+      <CustomParameter Name="$rootnamespace$" Value="$ext_safeprojectname$"/>
+    </CustomParameters>s
+    <ProjectCollection>
+      <SolutionFolder Name="01. Presentation">
+        <ProjectTemplateLink ProjectName="WebAPI" CopyParameters="true">
+        WebAPI\WebAPI.vstemplate
+        </ProjectTemplateLink>
+      </SolutionFolder>
+      <SolutionFolder Name="02. Domain">
+        <ProjectTemplateLink ProjectName="Domain.Core" CopyParameters="true">
+        Domain.Core\Domain.Core.vstemplate
+        </ProjectTemplateLink>
+        <ProjectTemplateLink ProjectName="Domain.Services" CopyParameters="true">
+        Domain.Services\Domain.Services.vstemplate
+        </ProjectTemplateLink>
+      </SolutionFolder>
+      <SolutionFolder Name="03. Infra">
+        <ProjectTemplateLink ProjectName="Infra.Repository" CopyParameters="true">
+        Infra.Repository\Infra.Repository.vstemplate
+        </ProjectTemplateLink>
+      </SolutionFolder>
+    </ProjectCollection>
+  </TemplateContent>
+</VSTemplate>

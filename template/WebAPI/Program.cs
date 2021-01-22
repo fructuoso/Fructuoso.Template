@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 
-namespace Fructuoso.Template.WebAPI
+namespace $ext_rootnamespace$.$safeprojectname$
 {
     public static class Program
     {

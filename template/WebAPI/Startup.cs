@@ -1,9 +1,9 @@
 using AutoMapper;
 using FluentValidation.AspNetCore;
-using Fructuoso.Template.Domain.Core.Interfaces.Repository;
-using Fructuoso.Template.Domain.Core.Interfaces.Service;
-using Fructuoso.Template.Domain.Services;
-using Fructuoso.Template.Infra.Repository;
+using $ext_rootnamespace$.Domain.Core.Interfaces.Repository;
+using $ext_rootnamespace$.Domain.Core.Interfaces.Service;
+using $ext_rootnamespace$.Domain.Services;
+using $ext_rootnamespace$.Infra.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
 
-namespace Fructuoso.Template.WebAPI
+namespace $ext_rootnamespace$.$safeprojectname$
 {
     public class Startup
     {
@@ -31,12 +31,12 @@ namespace Fructuoso.Template.WebAPI
             #region Swagger
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Fructuoso.Template", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "$ext_safeprojectname$", Version = "v1" });
             });
             #endregion
 
             #region DbContext
-            services.AddDbContext<RepositoryContext>(options => options.UseInMemoryDatabase(databaseName: "FructuosoDB"));
+            services.AddDbContext<RepositoryContext>(options => options.UseInMemoryDatabase(databaseName: "$ext_safeprojectname$_DB"));
             #endregion
 
             #region Dependency Injectionn

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>Fructuoso.Template.WebAPI</AssemblyName>
-    <RootNamespace>Fructuoso.Template.WebAPI</RootNamespace>
+    <AssemblyName>$ext_rootnamespace$.$safeprojectname$</AssemblyName>
+    <RootNamespace>$ext_rootnamespace$.$safeprojectname$</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
