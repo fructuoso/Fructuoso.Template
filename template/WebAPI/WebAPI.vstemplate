@@ -1,13 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>Fructuoso.Template.WebAPI</Name>
+    <Name>WebAPI</Name>
     <Description>&lt;No description available&gt;</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
     <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>Fructuoso.Template.WebAPI</DefaultName>
+    <DefaultName>WebAPI</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
@@ -20,19 +20,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="launchSettings.json">launchSettings.json</ProjectItem>
       </Folder>
       <Folder Name="Controllers" TargetFolderName="Controllers">
-        <ProjectItem ReplaceParameters="true" TargetFileName="CursoController.cs">CursoController.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="GenericControllerCrud.cs">GenericControllerCrud.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="InstrutorController.cs">InstrutorController.cs</ProjectItem>
-      </Folder>
-      <Folder Name="Models" TargetFolderName="Models">
-        <Folder Name="Curso" TargetFolderName="Curso">
-          <ProjectItem ReplaceParameters="true" TargetFileName="CursoModel.cs">CursoModel.cs</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="CursoProfile.cs">CursoProfile.cs</ProjectItem>
-        </Folder>
-        <Folder Name="Instrutor" TargetFolderName="Instrutor">
-          <ProjectItem ReplaceParameters="true" TargetFileName="InstrutorModel.cs">InstrutorModel.cs</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="InstruturProfile.cs">InstruturProfile.cs</ProjectItem>
-        </Folder>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
