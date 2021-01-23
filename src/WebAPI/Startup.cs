@@ -41,9 +41,7 @@ namespace Fructuoso.Template.WebAPI
 
             #region Dependency Injectionn
             services.AddTransient(typeof(IServiceCrud<,>), typeof(GenericServiceCrud<,>));
-            services.AddTransient<ICursoService, CursoService>();
             services.AddTransient(typeof(IRepositoryCrud<,>), typeof(GenericRepositoryCrud<,>));
-            services.AddTransient<ICursoRepository, CursoRepository>();
             #endregion
 
             #region AutoMapper
