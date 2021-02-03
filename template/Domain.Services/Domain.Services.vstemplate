@@ -16,7 +16,6 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="Domain.Services.csproj" File="Domain.Services.csproj" ReplaceParameters="true">
-      <ProjectItem ReplaceParameters="true" TargetFileName="CursoService.cs">CursoService.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="GenericServiceCrud.cs">GenericServiceCrud.cs</ProjectItem>
     </Project>
   </TemplateContent>
